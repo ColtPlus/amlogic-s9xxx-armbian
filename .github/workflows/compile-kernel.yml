@@ -81,7 +81,7 @@ on:
         type: choice
         options:
           - -ophub
-          - -yourname
+          - -ColtPlus
 
 env:
   TZ: Etc/UTC
