@@ -22,7 +22,7 @@ on:
       armbian_board:
         description: "Select device board."
         required: false
-        default: "all"
+        default: "seewo-sv50"
         type: choice
         options:
           - all
@@ -265,7 +265,7 @@ on:
         type: choice
         options:
           - ophub
-          - angel
+          - ColtPlus
 
 env:
   TZ: Etc/UTC
@@ -378,7 +378,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Rebuild Armbian
-        uses: ophub/amlogic-s9xxx-armbian@main
+        uses: ColtPlus/amlogic-s9xxx-armbian@main
         if: ${{ steps.clean.outputs.status == 'success' && !cancelled() }}
         with:
           build_target: armbian
