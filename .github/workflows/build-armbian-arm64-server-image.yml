@@ -290,6 +290,7 @@ on:
         options:
           - ophub
           - angel
+          - ColtPlus
       config_board:
         description: "Set the base Armbian board name."
         required: false
