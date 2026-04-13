@@ -116,7 +116,6 @@ on:
           - rock5b
           - rock5c
           - ruisen-box
-          - seewo-sv50
           - s905
           - s905-beelink-mini
           - s905-mxqpro-plus
@@ -204,6 +203,7 @@ on:
           - s922x-reva
           - s922x-ugoos-am6
           - seewo-sv21
+          - seewo-sv50
           - smart-am40
           - smart-am60
           - station-m1
@@ -234,7 +234,7 @@ on:
       armbian_kernel:
         description: "Select kernel version."
         required: false
-        default: "6.12.y_6.18.y"
+        default: "6.12.y"
         type: choice
         options:
           - 5.10.y
@@ -294,7 +294,7 @@ on:
       config_board:
         description: "Set the base Armbian board name."
         required: false
-        default: "odroidn2"
+        default: "seewo-sv50"
 
 env:
   TZ: Etc/UTC
