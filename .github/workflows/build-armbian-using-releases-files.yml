@@ -203,6 +203,7 @@ on:
           - s922x-reva
           - s922x-ugoos-am6
           - seewo-sv21
+          - seewo-sv50
           - smart-am40
           - smart-am60
           - station-m1
@@ -233,7 +234,7 @@ on:
       armbian_kernel:
         description: "Select kernel version."
         required: false
-        default: "6.12.y_6.18.y"
+        default: "6.12.y"
         type: choice
         options:
           - 5.10.y
@@ -259,6 +260,7 @@ on:
         type: choice
         options:
           - ophub/kernel
+          - ColtPlus/kernel
       kernel_usage:
         description: "Set the tags of the stable kernel."
         required: false
@@ -293,6 +295,7 @@ on:
         options:
           - ophub
           - angel
+          - ColtPlus
 
 env:
   TZ: Etc/UTC
