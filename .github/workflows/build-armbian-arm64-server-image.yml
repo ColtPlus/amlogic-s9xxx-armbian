@@ -116,6 +116,7 @@ on:
           - rock5b
           - rock5c
           - ruisen-box
+          - seewo-sv50
           - s905
           - s905-beelink-mini
           - s905-mxqpro-plus
@@ -250,10 +251,11 @@ on:
       kernel_repo:
         description: "Set the kernel repository."
         required: false
-        default: "ophub/kernel"
+        default: "ColtPlus/kernel"
         type: choice
         options:
           - ophub/kernel
+          - ColtPlus/kernel
       kernel_usage:
         description: "Set the tags of the stable kernel."
         required: false
