@@ -24,10 +24,10 @@ on:
       docker_img:
         description: "Set the docker image"
         required: false
-        default: "ophub/armbian"
+        default: "ColtPlus/armbian"
         type: choice
         options:
-          - ophub/armbian
+          - ColtPlus/armbian
 
 env:
   TZ: Etc/UTC
