@@ -11,7 +11,7 @@ on:
     inputs:
       set_release:
         description: "Select OS Release."
-        required: true
+        required: false
         default: "trixie"
         type: choice
         options:
@@ -233,8 +233,8 @@ on:
           - zysj
       armbian_kernel:
         description: "Select kernel version."
-        required: true
-        default: "6.12.y"
+        required: false
+        default: "6.12.y_6.18.y"
         type: choice
         options:
           - 5.10.y
@@ -250,15 +250,15 @@ on:
           - 6.1.y_6.18.y
       kernel_repo:
         description: "Set the kernel repository."
-        required: true
-        default: "ColtPlus/kernel"
+        required: false
+        default: "ophub/kernel"
         type: choice
         options:
           - ophub/kernel
           - ColtPlus/kernel
       kernel_usage:
         description: "Set the tags of the stable kernel."
-        required: true
+        required: false
         default: "stable"
         type: choice
         options:
@@ -267,7 +267,7 @@ on:
           - beta
       armbian_fstype:
         description: "Select armbian rootfs type."
-        required: true
+        required: false
         default: "ext4"
         type: choice
         options:
@@ -284,7 +284,7 @@ on:
           - beta
       builder_name:
         description: "Set Armbian builder signature."
-        required: true
+        required: false
         default: "ophub"
         type: choice
         options:
@@ -362,7 +362,7 @@ jobs:
           df -hT ${PWD}
           git clone -q --single-branch --depth=1 --branch=main https://github.com/armbian/build.git build
           ln -sf /builder/build ${{ github.workspace }}/build
-          ln -sf /builder/build /home/runner/work/_actions/ophub/amlogic-s9xxx-armbian/main/build
+          ln -sf /builder/build /home/runner/work/_actions/ColtPlus/amlogic-s9xxx-armbian/main/build
           echo "status=success" >> ${GITHUB_OUTPUT}
 
       - name: Compile Armbian [ ${{ inputs.set_release }} ]
@@ -413,7 +413,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Rebuild Armbian for target boards
-        uses: ophub/amlogic-s9xxx-armbian@main
+        uses: ColtPlus/amlogic-s9xxx-armbian@main
         if: ${{ steps.clean.outputs.status == 'success' && !cancelled() }}
         with:
           build_target: armbian
