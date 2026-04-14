@@ -203,7 +203,6 @@ on:
           - s922x-reva
           - s922x-ugoos-am6
           - seewo-sv21
-          - seewo-sv50
           - smart-am40
           - smart-am60
           - station-m1
@@ -234,7 +233,7 @@ on:
       armbian_kernel:
         description: "Select kernel version."
         required: false
-        default: "6.12.y"
+        default: "6.12.y_6.18.y"
         type: choice
         options:
           - 5.10.y
@@ -256,10 +255,9 @@ on:
       kernel_repo:
         description: "Set the kernel repository."
         required: false
-        default: "ophub/kernel"
+        default: "ColtPlus/kernel"
         type: choice
         options:
-          - ophub/kernel
           - ColtPlus/kernel
       kernel_usage:
         description: "Set the tags of the stable kernel."
@@ -290,12 +288,11 @@ on:
       builder_name:
         description: "Set Armbian builder signature."
         required: false
-        default: "ophub"
+        default: "ColtPlus"
         type: choice
         options:
-          - ophub
-          - angel
           - ColtPlus
+          - angel
 
 env:
   TZ: Etc/UTC
@@ -362,7 +359,7 @@ jobs:
           armbian_buildpath="build/output/images"
           [[ -d "${armbian_buildpath}" ]] || mkdir -p "${armbian_buildpath}"
           ln -sf /builder/build ${{ github.workspace }}/build
-          ln -sf /builder/build /home/runner/work/_actions/ophub/amlogic-s9xxx-armbian/main/build
+          ln -sf /builder/build /home/runner/work/_actions/ColtPlus/amlogic-s9xxx-armbian/main/build
 
           # Query the latest release asset via GitHub API
           latest_version=$(curl -s \
@@ -403,7 +400,7 @@ jobs:
           echo "status=success" >> ${GITHUB_OUTPUT}
 
       - name: Rebuild Armbian [ ${{ inputs.set_release }} ]
-        uses: ophub/amlogic-s9xxx-armbian@main
+        uses: ColtPlus/amlogic-s9xxx-armbian@main
         if: ${{ steps.down.outputs.status == 'success' && !cancelled() }}
         with:
           build_target: armbian
