@@ -251,10 +251,9 @@ on:
       kernel_repo:
         description: "Set the kernel repository."
         required: false
-        default: "ophub/kernel"
+        default: "ColtPlus/kernel"
         type: choice
         options:
-          - ophub/kernel
           - ColtPlus/kernel
       kernel_usage:
         description: "Set the tags of the stable kernel."
@@ -285,12 +284,11 @@ on:
       builder_name:
         description: "Set Armbian builder signature."
         required: false
-        default: "ophub"
+        default: "ColtPlus"
         type: choice
         options:
-          - ophub
-          - angel
           - ColtPlus
+          - angel
       config_board:
         description: "Set the base Armbian board name."
         required: false
