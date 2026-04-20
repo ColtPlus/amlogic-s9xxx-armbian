@@ -167,6 +167,17 @@ if [[ -x "/usr/bin/oes_sata_leds.sh" ]]; then
     log_message "SATA status check service (oes_sata_leds.sh) started in background."
 fi
 
+# For seewo-sv50(rk3588) board: USB power and switch control
+if [[ "${FDTFILE}" == "rk3588-seewo-sv50.dtb" ]]; then
+    (
+        # GPIO operations are critical, but we also add error suppression.
+        gpioset 1 25=0 >/dev/null 2>&1
+        gpioset 4 26=1 >/dev/null 2>&1
+        gpioset 4 27=1 >/dev/null 2>&1
+    ) &
+    log_message "USB power control GPIOs set for seewo-sv50."
+fi
+
 # For pveproxy startup service
 if [[ -n "$(dpkg -l | awk '{print $2}' | grep -w "^pve-manager$" || true)" ]]; then
     # Restarting systemd services can sometimes fail during early boot.
