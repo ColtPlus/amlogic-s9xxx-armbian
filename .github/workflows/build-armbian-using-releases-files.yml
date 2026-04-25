@@ -26,6 +26,7 @@ on:
         type: choice
         options:
           - all
+          - ipc-r
           - amlogic
           - rockchip
           - allwinner
