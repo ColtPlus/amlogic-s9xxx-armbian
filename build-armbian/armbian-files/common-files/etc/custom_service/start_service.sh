@@ -171,7 +171,7 @@ fi
 if [[ "${FDTFILE}" == "rk3588-seewo-sv50.dtb" ]]; then
     (
         # GPIO operations are critical, but we also add error suppression.
-        gpioset 1 25=0 >/dev/null 2>&1
+        gpioset 1 25=1 >/dev/null 2>&1
         gpioset 4 26=1 >/dev/null 2>&1
         gpioset 4 27=1 >/dev/null 2>&1
     ) &
