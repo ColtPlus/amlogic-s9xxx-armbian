@@ -17,6 +17,7 @@ on:
         type: choice
         options:
           - unifreq
+          - ophub
           - ColtPlus
       kernel_version:
         description: "Select kernel version"
@@ -80,8 +81,8 @@ on:
         default: "-ColtPlus"
         type: choice
         options:
+          - -ophub
           - -ColtPlus
-          - -yourname
 
 env:
   TZ: Etc/UTC
