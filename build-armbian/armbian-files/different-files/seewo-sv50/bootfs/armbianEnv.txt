@@ -4,6 +4,6 @@ fdtfile=rockchip/rk3588-seewo-sv50.dtb
 rootdev=/dev/mmcblk0p2
 rootfstype=ext4
 console=both
-docker_optimizations=on
-extraargs=rw rootwait
+docker_optimizations=on 
+extraargs=rw rootwait rockchip-dmc.dvfs_disable=1
 overlay_prefix=rk3588
