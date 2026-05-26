@@ -4,7 +4,7 @@ fdtfile=rockchip/rk3588-seewo-sv50.dtb
 rootdev=/dev/mmcblk0p2
 rootfstype=ext4
 console=serial
-consoleargs=console=ttyFIQ0 console=tty1
+consoleargs=console=ttyFIQ0 earlycon=uart8250
 docker_optimizations=on 
 extraargs=rw rootwait
 extraboardargs=net.ifnames=0 max_loop=128
