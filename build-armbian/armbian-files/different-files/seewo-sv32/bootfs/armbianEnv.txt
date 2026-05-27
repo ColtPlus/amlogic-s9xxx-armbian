@@ -1,0 +1,11 @@
+verbosity=7
+bootlogo=true
+fdtfile=rockchip/rk3588-seewo-sv32.dtb
+rootdev=/dev/mmcblk0p2
+rootfstype=ext4
+console=serial
+consoleargs=console=ttyFIQ0 earlycon=uart8250
+docker_optimizations=on 
+extraargs=rw rootwait
+extraboardargs=net.ifnames=0 max_loop=128
+overlay_prefix=rk3588
