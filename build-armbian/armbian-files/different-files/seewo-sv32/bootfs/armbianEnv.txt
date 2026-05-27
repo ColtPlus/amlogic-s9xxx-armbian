@@ -8,4 +8,3 @@ consoleargs=console=ttyFIQ0 earlycon=uart8250
 docker_optimizations=on 
 extraargs=rw rootwait
 extraboardargs=net.ifnames=0 max_loop=128
-overlay_prefix=rk3588
