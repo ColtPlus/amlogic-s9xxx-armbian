@@ -3,7 +3,7 @@ bootlogo=true
 fdtfile=rockchip/rk3588-seewo-sv32.dtb
 rootdev=/dev/mmcblk0p2
 rootfstype=ext4
-rootflags=compress=zstd:6
+rootflags=compress=zstd:1
 earlycon=on
 console=serial
 consoleargs=console=ttyFIQ0 console=tty1 earlycon=uart8250,mmio32,0xfeb50000
