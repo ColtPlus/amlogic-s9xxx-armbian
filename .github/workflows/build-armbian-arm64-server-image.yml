@@ -12,7 +12,7 @@ on:
       set_release:
         description: "Select OS Release."
         required: false
-        default: "all"
+        default: "noble"
         type: choice
         options:
           - all
@@ -23,7 +23,7 @@ on:
       armbian_board:
         description: "Select device board."
         required: false
-        default: "amlogic"
+        default: "seewo-sv32"
         type: choice
         options:
           - allwinner
@@ -311,6 +311,7 @@ on:
         type: choice
         options:
           - ophub
+          - angel
           - ColtPlus
       config_board:
         description: "Set the base Armbian board name."
