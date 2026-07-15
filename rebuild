@@ -78,12 +78,12 @@ board_release_file="etc/armbian-board-release.conf"
 ophub_release_file="etc/ophub-release"
 
 # U-BOOT files download repository
-uboot_repo="https://github.com/ophub/u-boot"
+uboot_repo="https://github.com/ColtPlus/u-boot"
 # Firmware files download repository
 firmware_repo="https://github.com/ophub/firmware"
 
 # Set the kernel download repository from github.com
-kernel_repo="https://github.com/ophub/kernel"
+kernel_repo="https://github.com/ColtPlus/kernel"
 # Set the tags(kernel_xxx) of the default kernel that can be replaced via the [ -u ] parameter
 default_tags="stable"
 kernel_usage=""
@@ -1263,7 +1263,7 @@ refactor_rootfs() {
         "MAINLINE_UBOOT='${RECORD_MAINLINE_UBOOT}'"
         "BOOTLOADER_IMG='${RECORD_BOOTLOADER_IMG}'"
         "BUILD_REPOSITORY='github.com/armbian/build'"
-        "REBUILD_REPOSITORY='github.com/ophub/amlogic-s9xxx-armbian'"
+        "REBUILD_REPOSITORY='github.com/ColtPlus/amlogic-s9xxx-armbian'"
         "CONTRIBUTORS='${CONTRIBUTORS}'"
         "BUILDER_NAME='${builder_name}'"
         "PACKAGED_DATE='$(date +%Y-%m-%d)'"
