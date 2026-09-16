@@ -82,6 +82,16 @@ if [[ "${FDTFILE}" == "rk3568-swan1-w28.dtb" ]]; then
     log_message "USB power control GPIOs set for Swan1-w28."
 fi
 
+# For seewo-sv15(rk3588) board: USB power and switch control
+if [[ "${FDTFILE}" == "rk3588-seewo-sv15.dtb" ]]; then
+    (
+        # GPIO operations are critical, but we also add error suppression.
+        gpioset 1 18=1 >/dev/null 2>&1
+        gpioset 1 22=1 >/dev/null 2>&1
+    ) &
+    log_message "USB power control GPIOs set for Seewo-SV15."
+fi
+
 # For seewo-sv32(rk3588) board: USB power and switch control
 if [[ "${FDTFILE}" == "rk3588-seewo-sv32.dtb" ]]; then
     (
