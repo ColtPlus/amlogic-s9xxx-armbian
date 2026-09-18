@@ -1,4 +1,4 @@
-verbosity=8
+verbosity=7
 bootlogo=true
 fdtfile=rockchip/rk3588-seewo-sv15.dtb
 rootdev=/dev/mmcblk0p2
